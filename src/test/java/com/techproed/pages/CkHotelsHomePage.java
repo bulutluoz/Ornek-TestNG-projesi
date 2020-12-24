@@ -24,5 +24,8 @@ public class CkHotelsHomePage {
     @FindBy(id="btnSubmit")
     public WebElement loginButonu;
 
+    @FindBy(xpath = "//div[@class='validation-summary-errors']")
+    public WebElement girilemediYazisi;
+
 
 }

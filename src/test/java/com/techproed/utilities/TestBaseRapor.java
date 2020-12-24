@@ -11,21 +11,22 @@ import org.testng.annotations.BeforeTest;
 import java.io.IOException;
 
 public abstract class TestBaseRapor {
-    protected static ExtentReports extentReports;
-    protected static ExtentTest extentTest;
-    protected static ExtentHtmlReporter extentHtmlReporter;
+    protected static ExtentReports extentReports; //extent report'a ilk atamayi yapar
+    protected static ExtentTest extentTest; // test pass veya failed gibi bilgileri kaydeder. Ayrica ekran resmi icin de kullaniriz
+    protected static ExtentHtmlReporter extentHtmlReporter; // Html raporu duzenler
 
     // Test işlemine başlamadan hemen önce (test methodundan önce değil, tüm test işleminden önce)
     @BeforeTest(alwaysRun = true) // alwaysRun : her zaman çalıştır.
     public void setUpTest() {
         extentReports = new ExtentReports();
         //rapor oluştuktan sonra raporunuz nereye eklensin istiyorsanız buraya yazıyorsunuz.
-        String filePath = System.getProperty("user.dir") + "/test-output/benimraporum.html";
+        String filePath = System.getProperty("user.dir") + "/test-output/Rapor.html";
         //oluşturmak istediğimiz raporu (html formatında) başlatıyoruz, filePath ile dosya yolunu belirliyoruz.
         extentHtmlReporter = new ExtentHtmlReporter(filePath);
         extentReports.attachReporter(extentHtmlReporter);
 
         // İstediğiniz bilgileri buraya ekeyebiliyorsunuz.
+        extentReports.setSystemInfo("Enviroment","QA");
         extentReports.setSystemInfo("Browser", ConfigReader.getProperty("browser")); // chrome, firefox
         extentReports.setSystemInfo("Automation Engineer", "Mehmet");
         extentHtmlReporter.config().setDocumentTitle("amazon Arama Testi");
@@ -49,7 +50,7 @@ public abstract class TestBaseRapor {
     }
 
 
-    // Raporlandırmayı sonlandırıyorduk.
+    // Raporlandırmayı sonlandırmak icin
     @AfterTest(alwaysRun = true)
     public void tearDownTest() {
         extentReports.flush();
