@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="paralel calistirma">
+    <test name="paralel test">
+        <classes>
+            <class name="com.techproed.smokeTest.PositiveLogin"></class>
+        </classes>
+    </test>
+    <test name="negative test">
+       <classes>
+           <class name="com.techproed.smokeTest.NegativeLogin"></class>
+       </classes>
+    </test>
+</suite>
