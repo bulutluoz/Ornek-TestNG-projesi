@@ -19,12 +19,8 @@ public class data {
 
     @DataProvider(name="aranacaklar")
     public Object[] getUrunler(){
-        Object[] aranacaklar =new Object[5];
-        aranacaklar[0]="ali";
-        aranacaklar[1]= "veli";
-        aranacaklar[2]= "hasan";
-        aranacaklar[3]="huseyin";
-        aranacaklar[4]="yasar";
+        String  aranacaklar[] = {"Ali","Veli","Hasan","Huseyin","Yasar"};
+
         return aranacaklar;
     }
 
