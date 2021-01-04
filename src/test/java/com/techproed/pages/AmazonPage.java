@@ -23,6 +23,9 @@ public class AmazonPage {
     @FindBy(xpath = "(//tr[1])//td")
     public List<WebElement> birinciSatirElementleri;
 
+    @FindBy(id="twotabsearchtextbox")
+    public WebElement aramaKutusu;
+
 
 
 
