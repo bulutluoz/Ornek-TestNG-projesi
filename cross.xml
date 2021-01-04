@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="cross test" parallel="tests" thread-count="2" verbose="2">
+    <test name="cross chrome">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="com.techproed.cross.AmazonAramaCross1"></class>
+        </classes>
+    </test>
+    <test name="cross firefox">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="com.techproed.cross.AmazonTitleCross"></class>
+        </classes>
+    </test>
+</suite>

@@ -65,7 +65,7 @@ public class DriverCross {
     public static void closeDriver(){
         // Eğer driver nesnesi NULL değilse, yani hafızada varsa
         if (driver != null){
-            driver.quit();  // driver'ı kapat
+            driver.close();  // driver'ı kapat
             driver = null;  // driver'ı hafızadan temizle.
         }
     }
