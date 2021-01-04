@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="crossBrowser" parallel="tests" thread-count="2" verbose="2">
+    <test name="cross browser firefox">
+        <parameter name="browser" value="firefox"></parameter>
+        <packages>
+            <package name="com.techproed.crossBrowser"></package>
+        </packages>
+    </test>
+
+    <test name="cross browser opera">
+        <parameter name="browser" value="opera"></parameter>
+        <packages>
+            <package name="com.techproed.crossBrowser"></package>
+        </packages>
+    </test>
+
+</suite>

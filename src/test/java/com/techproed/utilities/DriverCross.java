@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
@@ -19,7 +20,7 @@ public class DriverCross {
     static WebDriver driver;
 
 
-    public static WebDriver getDriver(String browser){
+    public static WebDriver getDriver(String browser){//chrome
 
         // Eğer browser olarak gelen parametrenin değeri "null" ise, yani boş bir değer geldiyse
         // o zaman güvenlik önlemi olarak, .properties dosyasından browser değerini al ve kullan
@@ -36,9 +37,9 @@ public class DriverCross {
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
                     break;
-                case "ie":
-                    WebDriverManager.iedriver().setup();
-                    driver = new InternetExplorerDriver();
+                case "edge":
+                    WebDriverManager.edgedriver().setup();
+                    driver = new EdgeDriver();
                     break;
                 case "opera":
                     WebDriverManager.operadriver().setup();
