@@ -20,6 +20,7 @@ public class D25_HtmlRapor1 extends TestBaseRapor {
 
         CkHotelsHomePage ckHotelsHomePage=new CkHotelsHomePage();
 
+
         Driver.getDriver().get(ConfigReader.getProperty("ck_hotels_url"));
         extentTest.info("ck hotels ana sayfaya git");
         ckHotelsHomePage.ilkLogIn.click();
